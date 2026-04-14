@@ -1,4 +1,4 @@
-# OpenCode Setup — BNP CIB Robotic Team
+# OpenCode Setup
 
 AI-assisted coding in the terminal using [OpenCode](https://opencode.ai) with our internal Qwen3 model.
 
@@ -56,7 +56,7 @@ Open it and fill in the two placeholders:
 "apiKey":  "YOUR_API_KEY_OR_ENV_VAR"
 ```
 
-> If your API key is available as an environment variable (e.g. `BNP_API_KEY`), you can set `"apiKey": "${BNP_API_KEY}"` and export it in your shell profile instead of hardcoding it.
+> If your API key is available as an environment variable (e.g. `API_KEY`), you can set `"apiKey": "${API_KEY}"` and export it in your shell profile instead of hardcoding it.
 
 ### 3. Copy the global personal rules
 
@@ -64,7 +64,7 @@ Open it and fill in the two placeholders:
 cp global-AGENTS.md ~/.config/opencode/AGENTS.md
 ```
 
-This file is never committed to git. It applies your personal context (stack, conventions, BNP-specific gotchas) to every OpenCode session.
+This file is never committed to git. It applies your personal context (stack, conventions, specific gotchas) to every OpenCode session.
 
 ### 4. Python LSP (optional but recommended)
 
@@ -129,7 +129,7 @@ echo 'export PATH="$HOME/.opencode/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
 Check that your internal endpoint is reachable and your API key is set. The `baseURL` in `opencode.json` must match what the team has provisioned.
 
 **Artifactory / TLS errors when using uv inside a session**
-This is a known BNP corporate network issue. The correct fix is `allow-insecure-host = ["artifactory.cib.echonet"]` in `pyproject.toml`. Do not use `verify-ssl = false` — it does not suppress `BadSignature` errors.
+The correct fix is `allow-insecure-host = ["artifactory.cib.echonet"]` in `pyproject.toml`. Do not use `verify-ssl = false` — it does not suppress `BadSignature` errors.
 
 ---
 
