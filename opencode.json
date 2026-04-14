@@ -1,0 +1,41 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "provider": {
+    "bnp-internal": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "BNP Internal",
+      "options": {
+        "baseURL": "https://YOUR_INTERNAL_ENDPOINT/v1",
+        "apiKey": "YOUR_API_KEY_OR_ENV_VAR"
+      },
+      "models": {
+        "qwen3": {
+          "name": "qwen3"
+        }
+      }
+    }
+  },
+
+  "model": "bnp-internal/qwen3",
+
+  "agents": {
+    "coder": {
+      "model": "bnp-internal/qwen3",
+      "temperature": 0.55
+    }
+  },
+
+  "instructions": [
+    "~/.config/opencode/AGENTS.md"
+  ],
+
+  "autoshare": false,
+
+  "lsp": {
+    "python": {
+      "disabled": false,
+      "command": "pylsp"
+    }
+  }
+}
